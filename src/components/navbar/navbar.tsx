@@ -3,11 +3,12 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
-import { SignInButton, SignUpButton } from "@clerk/clerk-react";
+import { SignInButton, SignUpButton, useUser, SignOutButton } from "@clerk/clerk-react";
 export const Navbar: React.FC = () => {
 
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
+    const user = useUser();
 
     return <div className='w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-lg'>
         <div className='px-2 flex justify-between items-center w-full h-full'>
@@ -21,14 +22,19 @@ export const Navbar: React.FC = () => {
                 </ul>
             </div>
             <div className='hidden md:flex pr-4'>
-                <SignInButton>
+                {!user.isSignedIn ? <><SignInButton>
                     <button className='border-none bg-transparent text-black mr-4'>
                         Sign In
                     </button>
                 </SignInButton>
-                <SignUpButton>
-                    <button className='px-8 py-3'>Sign Up</button>
-                </SignUpButton>
+                    <SignUpButton>
+                        <button className='px-8 py-3'>Sign Up</button>
+                    </SignUpButton>
+                </> : <SignOutButton>
+                    <button className='border-none bg-transparent text-black mr-4'>
+                        Sign Out
+                    </button>
+                </SignOutButton>}
             </div>
             <div className='md:hidden mr-4' onClick={handleClick}>
                 {!nav ? <HiMenuAlt1 className='w-5' /> : <HiX className='w-5' />}

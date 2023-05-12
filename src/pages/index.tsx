@@ -1,9 +1,8 @@
+import { useUser } from "@clerk/clerk-react";
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { Navbar } from "y/components/navbar";
-
-import { api } from "y/utils/api";
 
 const Home: NextPage = () => {
 
