@@ -29,9 +29,6 @@ const config = {
       },
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-    'baseui/deprecated-theme-api': "warn",
-    'baseui/deprecated-component-api': "warn",
-    'baseui/no-deep-imports': "warn",
   },
 };
 
