@@ -1,15 +1,13 @@
 import { useUser } from "@clerk/clerk-react";
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import { CardWithBorder } from "y/components/card-with-border";
 import { AnalyticsIcon } from "y/components/icons/analytics";
 import { HourglassIcon } from "y/components/icons/hourglass";
 import { MegaphoneIcon } from "y/components/icons/megaphone";
 import { PeopleIcon } from "y/components/icons/people";
-import { SettingsIcon } from "y/components/icons/settings";
+import { RocketIcon } from "y/components/icons/rocket";
 import { ToolsIcon } from "y/components/icons/tools";
-import { Navbar } from "y/components/navbar";
 
 const Home: NextPage = () => {
 
@@ -25,6 +23,7 @@ const Home: NextPage = () => {
           <h1 className="text-5xl font-extrabold tracking-tight">
             Your <span className="text-[#5856B9]">business management</span> made simple.
           </h1>
+          <div className="text-center md:px-48">The future of your business is data-driven and prosperous. Our Business Management Platform is here to guide you on your journey to success. Embrace the power of information and unlock your business's full potential today!</div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <CardWithBorder title="What is it →" text="Upgrade and run your business like a pro and give your customers the best experience." />
             <CardWithBorder title="Analytics and more →" text="Grow your company keeping track everything in one app." />
@@ -33,41 +32,59 @@ const Home: NextPage = () => {
             Why choose <span className="text-[#5856B9]">SetItApp</span>
           </h2>
           <div className="grid md:grid-cols-6 gap-4 sm:grid-cols-2 md:gap-8">
-            <div className="grid gap-4 justify-center">
+            <div className="grid gap-4 justify-center items-center">
               <div className="flex justify-center">
                 <HourglassIcon size="48" />
               </div>
               <h1 className="text-xl font-bold tracking-tight text-center">Save Time</h1>
+              <span className="tracking-tight text-center">
+              Spend less time on administrative work and more time on high-value activities.
+              </span>
             </div>
-            <div className="grid gap-4 justify-center">
+            <div className="grid gap-4 justify-center items-center">
               <div className="flex justify-center">
                 <AnalyticsIcon size="48" />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-center">Analytics and Insights</h1>
+              <h1 className="text-xl font-bold tracking-tight text-center">Analytics</h1>
+              <span className="tracking-tight text-center">
+               Overview of your business's performance metrics on a single dashboard.
+              </span>
             </div>
-            <div className="grid gap-4 justify-center">
+            <div className="grid gap-4 justify-center items-center">
               <div className="flex justify-center">
                 <MegaphoneIcon size="48" />
               </div>
               <h1 className="text-xl font-bold tracking-tight text-center">Marketing</h1>
+              <span className="tracking-tight text-center">
+                Data-driven approach gives you actionable insights into your marketing efforts.
+              </span>
             </div>
-            <div className="grid gap-4 justify-center">
+            <div className="grid gap-4 justify-center items-center">
               <div className="flex justify-center">
                 <PeopleIcon size="48" />
               </div>
               <h1 className="text-xl font-bold tracking-tight text-center">Personnel Management</h1>
+              <span className="tracking-tight text-center">
+                Monitor employees' work hours, approve or reject leave requests, and maintain accurate records.
+              </span>
             </div>
-            <div className="grid gap-4 justify-center">
+            <div className="grid gap-4 justify-center items-center">
               <div className="flex justify-center">
-                <AnalyticsIcon size="48" />
+                <RocketIcon size="48" />
               </div>
               <h1 className="text-xl font-bold tracking-tight text-center">Customer Experience</h1>
+              <span className="tracking-tight text-center">
+                Upgrade and run your business like a pro and give your customers the best experience!
+              </span>
             </div>
             <div className="grid gap-4 justify-center">
-              <div className="flex justify-center">
+              <div className="flex justify-center items-center">
                 <ToolsIcon size="48" />
               </div>
               <h1 className="text-xl font-bold tracking-tight text-center">Online Support</h1>
+              <span className="tracking-tight text-center">
+                Available 24 hours a day, 7 days a week, and 365 days a year to respond to your queries promptly.
+              </span>
             </div>
           </div>
         </div>

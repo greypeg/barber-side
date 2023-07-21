@@ -1,6 +1,6 @@
 export const Footer: React.FC = () => {
     return (
-        <footer className="rounded-t-lg shadow bg-black">
+        <footer className="shadow bg-black">
             <div className="w-screen max-w-screen-xl mx-auto p-4 md:py-8">
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">
