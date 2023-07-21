@@ -83,7 +83,7 @@ const Home: NextPage = () => {
               </div>
               <h1 className="text-xl font-bold tracking-tight text-center">Online Support</h1>
               <span className="tracking-tight text-center">
-                Available 24 hours a day, 7 days a week, and 365 days a year to respond to your queries promptly.
+                Available 24 hours a day, 7 days a week, and 365 days a year to respond to your queries.
               </span>
             </div>
           </div>
