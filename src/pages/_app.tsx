@@ -1,20 +1,24 @@
+import { type Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
-import { api } from "y/utils/api";
-import "y/styles/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "y/providers/theme/theme.provider";
-import { Layout } from "y/layout/page-layout";
+import { api } from "~/utils/api";
+import "~/styles/globals.css";
+import { Layout } from "~/layout/page-layout";
+import { ThemeProvider } from "~/theme/theme.provider";
 
 
-const MyApp: AppType = ({ Component, pageProps }) => {
+const MyApp: AppType<{ session: Session | null }> = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}) => {
   return (
-    <ClerkProvider {...pageProps}>
+    <SessionProvider session={session}>
       <ThemeProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </ThemeProvider>
-    </ClerkProvider >
+      </ThemeProvider >
+    </SessionProvider >
   );
 };
 
