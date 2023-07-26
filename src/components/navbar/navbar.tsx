@@ -29,20 +29,32 @@ export const Navbar: React.FC = () => {
                         {!user.isSignedIn ?
                             <>
                                 <SignInButton>
-                                    <Button size="compact"
+                                    <Button size="compact" overrides={{
+                                        BaseButton: {
+                                            style: ({ $theme }) => ({
+                                                background: "linear-gradient(55deg, rgba(88,86,185,1) 0%, rgba(148,203,196,1) 100%);"
+                                            })
+                                        }
+                                    }}
                                     >
                                         Login
                                     </Button>
                                 </SignInButton>
                             </> : <SignOutButton>
-                                <Button size="compact" >
+                                <Button size="compact" overrides={{
+                                    BaseButton: {
+                                        style: ({ $theme }) => ({
+                                            background: "linear-gradient(55deg, rgba(88,86,185,1) 0%, rgba(148,203,196,1) 100%);"
+                                        })
+                                    }
+                                }}>
                                     Sign Out
                                 </Button>
                             </SignOutButton>}
                     </div>
                 </div>
                 <div className='md:hidden mr-4' onClick={handleClick}>
-                        {!nav ? <HiMenuAlt1 className='w-5' /> : <HiX className='w-5' />}
+                    {!nav ? <HiMenuAlt1 className='w-5' /> : <HiX className='w-5' />}
                 </div>
             </div>
             <div>
@@ -57,12 +69,24 @@ export const Navbar: React.FC = () => {
                         {!user.isSignedIn ?
                             <>
                                 <SignInButton>
-                                    <Button size="compact">
+                                    <Button size="compact" overrides={{
+                                        BaseButton: {
+                                            style: ({ $theme }) => ({
+                                                background: "linear-gradient(55deg, rgba(88,86,185,1) 0%, rgba(148,203,196,1) 100%);"
+                                            })
+                                        }
+                                    }} >
                                         Login
                                     </Button>
                                 </SignInButton>
                             </> : <SignOutButton>
-                                <Button size="compact">
+                                <Button size="compact" overrides={{
+                                    BaseButton: {
+                                        style: ({ $theme }) => ({
+                                            background: "linear-gradient(55deg, rgba(88,86,185,1) 0%, rgba(148,203,196,1) 100%);"
+                                        })
+                                    }
+                                }}>
                                     Sign Out
                                 </Button>
                             </SignOutButton>}

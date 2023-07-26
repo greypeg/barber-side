@@ -7,6 +7,7 @@ import { ListItem, ListItemLabel } from "baseui/list";
 import { Accordion, Panel } from "baseui/accordion";
 import { StatefulCalendar } from 'baseui/datepicker';
 import { Avatar } from "baseui/avatar";
+import { UserProfile } from '@clerk/clerk-react';
 
 type Props = {}
 
@@ -72,7 +73,7 @@ const Booking: NextPage = () => {
 
     return (
         <div className="flex flex-col items-center justify-center bg-white text-black">
-            <div className="flex flex-col items-center justify-around gap-12 px-4 py-16 ">
+            <div className="flex flex-col items-center justify-around gap-12 px-4 py-16 ">  
                 <ProgressSteps current={current} overrides={{
                     Root: {
                         style: ({ $theme }) => ({

@@ -1,7 +1,7 @@
-import { useUser } from "@clerk/clerk-react";
+import { Button } from "baseui/button";
 import { type NextPage } from "next";
 import Head from "next/head";
-import { CardWithBorder } from "y/components/card-with-border";
+import { Card } from "y/components/card";
 import { AnalyticsIcon } from "y/components/icons/analytics";
 import { HourglassIcon } from "y/components/icons/hourglass";
 import { MegaphoneIcon } from "y/components/icons/megaphone";
@@ -19,15 +19,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center py-24">
-        <div className="flex flex-col items-center justify-around gap-12">
+        <div className="flex flex-col items-center justify-around gap-12 text-center">
           <h1 className="text-5xl font-extrabold tracking-tight">
             Your <span className="text-[#5856B9]">business management</span> made simple.
           </h1>
           <div className="text-center md:px-48">The future of your business is data-driven and prosperous. Our Business Management Platform is here to guide you on your journey to success. Embrace the power of information and unlock your business's full potential today!</div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-            <CardWithBorder title="What is it →" text="Upgrade and run your business like a pro and give your customers the best experience." />
-            <CardWithBorder title="Analytics and more →" text="Grow your company keeping track everything in one app." />
-          </div>
+          <Button overrides={{
+            BaseButton: {
+              style: ({ $theme }) => ({
+                background: "linear-gradient(55deg, rgba(88,86,185,1) 0%, rgba(148,203,196,1) 100%);"
+              })
+            }
+          }}>Start for free</Button>
           <h2 className="text-3xl font-extrabold tracking-tight text-center">
             Why choose <span className="text-[#5856B9]">SetItApp</span>
           </h2>
@@ -36,25 +39,25 @@ const Home: NextPage = () => {
               <div className="flex justify-center">
                 <HourglassIcon size="48" />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-center">Save Time</h1>
+              <h3 className="text-xl font-bold tracking-tight text-center">Save Time</h3>
               <span className="tracking-tight text-center">
-              Spend less time on administrative work and more time on high-value activities.
+                Spend less time on administrative work and more time on high-value activities.
               </span>
             </div>
             <div className="grid gap-4 justify-center items-center">
               <div className="flex justify-center">
                 <AnalyticsIcon size="48" />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-center">Analytics</h1>
+              <h3 className="text-xl font-bold tracking-tight text-center">Analytics</h3>
               <span className="tracking-tight text-center">
-               Overview of your business's performance metrics on a single dashboard.
+                Overview of your business's performance metrics on a single dashboard.
               </span>
             </div>
             <div className="grid gap-4 justify-center items-center">
               <div className="flex justify-center">
                 <MegaphoneIcon size="48" />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-center">Marketing</h1>
+              <h3 className="text-xl font-bold tracking-tight text-center">Marketing</h3>
               <span className="tracking-tight text-center">
                 Data-driven approach gives you actionable insights into your marketing efforts.
               </span>
@@ -63,7 +66,7 @@ const Home: NextPage = () => {
               <div className="flex justify-center">
                 <PeopleIcon size="48" />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-center">Personnel Management</h1>
+              <h3 className="text-xl font-bold tracking-tight text-center">Personnel Management</h3>
               <span className="tracking-tight text-center">
                 Monitor employees' work hours, approve or reject leave requests, and maintain accurate records.
               </span>
@@ -72,7 +75,7 @@ const Home: NextPage = () => {
               <div className="flex justify-center">
                 <RocketIcon size="48" />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-center">Customer Experience</h1>
+              <h3 className="text-xl font-bold tracking-tight text-center">Customer Experience</h3>
               <span className="tracking-tight text-center">
                 Upgrade and run your business like a pro and give your customers the best experience!
               </span>
@@ -81,11 +84,16 @@ const Home: NextPage = () => {
               <div className="flex justify-center items-center">
                 <ToolsIcon size="48" />
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-center">Online Support</h1>
+              <h3 className="text-xl font-bold tracking-tight text-center">Online Support</h3>
               <span className="tracking-tight text-center">
                 Available 24 hours a day, 7 days a week, and 365 days a year to respond to your queries.
               </span>
             </div>
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-center">
+            Our <span className="text-[#5856B9]">Pricing</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4 sm:grid-cols-1 md:gap-8">
           </div>
         </div>
       </main>
